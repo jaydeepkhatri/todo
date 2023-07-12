@@ -14,13 +14,19 @@ const todoSlice = createSlice({
             }
             state.push(newTodo);
         },
+        updateTodo: (state, action) => {
+            const { id, title, description, username } = action.payload;
+            state[state.findIndex(el => parseInt(el.id) === parseInt(id))] = {
+                id, title, description, username
+            }
+        },
         deleteTodo: (state, action) => {
             const { id } = action.payload;
-            state = state.filter((todo) => todo.id !== id);
+            return state.filter((todo) => todo.id !== id);
         }
     }
 })
 
-export const { addTodo, deleteTodo } = todoSlice.actions;
+export const { addTodo, updateTodo, deleteTodo } = todoSlice.actions;
 
 export default todoSlice.reducer;

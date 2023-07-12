@@ -18,7 +18,7 @@ function Dashboard() {
     if (!username) {
       navigate('/')
     }
-  }, [username])
+  }, [username, navigate])
 
 
   const handleTodoSubmit = (e) => {
@@ -54,6 +54,7 @@ function Dashboard() {
               <div className="todo" key={todo.id}>
                 <h2>{todo.title}</h2>
                 <p>{todo.description}</p>
+                <button className="btn" onClick={() => navigate(`/edit/${todo.id}`)}>Edit</button>
               </div>
             )
           })
