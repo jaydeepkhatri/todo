@@ -2,7 +2,7 @@ import { Routes, Route } from 'react-router-dom';
 import  Login from './pages/Login';
 import './style/main.scss';
 import Dashboard from './pages/Dashboard';
-import EditTodo from './pages/editTodo';
+import EditTodo from './pages/EditTodo';
 
 function App() {
   return (
